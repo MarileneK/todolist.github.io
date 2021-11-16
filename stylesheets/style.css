@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Urbanist:wght@100;400&display=swap');
+
 :root {
     --color_blue: #0984e3;
     --color_dark_blue: #546de5;
@@ -10,8 +12,6 @@
     --color_darkgrey: #222325;
 
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Urbanist:wght@100;400&display=swap');
 
 body {
     background-color: var(--color_darkgrey);
@@ -32,6 +32,8 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     font-size: 50px;
+    text-shadow: 4px 5px var(--color_lightgrey);
+    letter-spacing: 5px;
 }
 
 ul {
