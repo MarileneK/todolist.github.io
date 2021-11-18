@@ -16,14 +16,15 @@ function newElement() {
 
     document.querySelector("#toDo").value = "";
 
+
     let span = document.createElement("span"); // Je crée un <span>
-    let spanText = document.createTextNode('<i class="far fa-trash-alt"></i>');
-    // let spanText = document.createTextNode('\u00D7');
-    span.className = "close";
-    span.appendChild(spanText);
+    span.className = "delete-icon";
+    let i = document.createElement('i');
+    i.className = "far fa-trash-alt";
+    span.appendChild(i);
     li.appendChild(span);
 
-    let close = document.querySelectorAll(".close");
+    let close = document.querySelectorAll(".delete-icon");
     for (let i = 0; i < close.length; i++) {
         close[i].onclick = function() {
             let parentOfClose = this.parentElement;
