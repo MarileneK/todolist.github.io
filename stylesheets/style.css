@@ -56,8 +56,11 @@ form {
 
 input {
     font-size: 17px;
+    font-family: 'Urbanist', sans-serif;
+}
+
+#btn {
     font-family: 'Archivo Black', sans-serif;
-    font-weight: normal;
 }
 
 ul {
@@ -100,7 +103,7 @@ a:hover {
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 320px) {
+@media (max-width: 474px) {
     body {
         font-size: 10px;
         height: 80vh;
