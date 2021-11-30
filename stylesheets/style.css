@@ -25,6 +25,7 @@ header, main {
     margin: 0 auto;
 }
 
+/* MAIN SECTION */
 main {
     width: 40%;
     margin: 0 auto;
@@ -35,7 +36,6 @@ main {
 h1 {
     color: var(--color_green);
     font-family: 'Archivo Black', sans-serif;
-    /* width: auto; */
     text-decoration: underline var(--color_purple) 5px;
     text-align: center;
     text-transform: uppercase;
@@ -44,6 +44,11 @@ h1 {
     letter-spacing: 5px;
 }
 
+h2 {
+    font-size: 22px;
+}
+
+
 /* FORM */
 form {
     margin-bottom: 20px;
@@ -51,6 +56,8 @@ form {
 
 input {
     font-size: 17px;
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: normal;
 }
 
 ul {
@@ -78,7 +85,9 @@ li {
 /* FOOTER */
 footer {
     text-align: center;
+    font-size: 13px;
 }
+
 a {
     text-decoration: none;
     color: var(--color_lightgrey);
