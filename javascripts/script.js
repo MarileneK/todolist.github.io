@@ -1,40 +1,79 @@
-// Create a new <li> after clicking on "Add" button
-function newElement() {
-    let li = document.createElement("li"); // 1. Je crée un nouveau <li>
-    let inputValue = document.querySelector("#toDo").value; // 2. Je récupère la valeur saisie par l'utilisateur
-    console.log("inputValue =", inputValue);
+window.onload = function () {
+    
+    function addNewElement(event) {
+        event.preventDefault(); // Prevents from page refresh
 
-    let text = document.createTextNode(inputValue); // 3. Je crée du texte qui correspond à la valeur saisie par l'utilisateur + picto poubelle
-    li.appendChild(text); // 4. Je rattache ma variable "text" au <li> que j'ai créé
-    console.log("log de li.appendChild(text)", li.appendChild(text));
+        // 1. CREATE A NEW TODO
+        let ul = document.querySelector("ul");
+        let userInput = document.querySelector("#toDo").value;
+        // console.log(userInput);
+        let alertWarning = document.querySelector("#alert");
 
-    if (inputValue === '') { // 5. Si l'utilisateur laisse le champ vide, je l'en informe 
-        alert("You must write something");
-    } else {
-        document.querySelector("ul").appendChild(li); // ... AUTREMENT : je rattache le <li> au <ul>
-    }
-
-    document.querySelector("#toDo").value = "";
+        let li = document.createElement("li");
 
 
-    let span = document.createElement("span"); // Je crée un <span>
-    span.className = "delete-icon";
-    let i = document.createElement('i');
-    i.className = "far fa-trash-alt";
-    span.appendChild(i);
-    li.appendChild(span);
+        // 2. CREATE CHECK ICON
+        let box = document.createElement("a");
+        let boxIcon = document.createElement("i");
 
-    let close = document.querySelectorAll(".delete-icon");
-    for (let i = 0; i < close.length; i++) {
-        close[i].onclick = function() {
-            let parentOfClose = this.parentElement;
-            parentOfClose.style.display = "none";
+        box.className = "boxToCheck";
+        boxIcon.className = "far fa-square";
+
+        box.appendChild(boxIcon);
+        li.appendChild(box);
+
+        let newToDo = document.createTextNode(userInput);
+        li.appendChild(newToDo);
+
+
+        // IF CONDITION IF USER CLICKS ON ADD BTN
+        if (userInput === "") {
+            alertWarning.style.display = "inline";
+        } else {
+            alertWarning.style.display = "none";
+            ul.appendChild(li);
+            document.querySelector("#toDo").value = "";
         }
+
+        
+        // IF USER CLICKS ON BOX ICON, TEXT IS CROSSED
+        let checkedBox = document.querySelectorAll(".boxToCheck");
+        console.log(checkedBox);
+        for (let y = 0; y < checkedBox.length; y++) {
+            checkedBox[y].addEventListener("click", function () {
+                // alert("test");
+                let parentOfCheckedBox = this.parentElement;
+                console.log(parentOfCheckedBox);
+                parentOfCheckedBox.style.textDecoration = "line-through";
+                parentOfCheckedBox.style.color = "#5f27cd";
+            })
+        }
+
+        
+        // 3. ADD TRASH ICON
+        let aTag = document.createElement("a");
+        let icon = document.createElement("i");
+
+        aTag.className = "delete-icon";
+        icon.className = "far fa-trash-alt";
+
+        aTag.appendChild(icon);
+        li.appendChild(aTag);
+
+        let deleteIcon = document.querySelectorAll(".delete-icon");
+
+        // DELETE AFTER CLICKING ON TRASH ICON
+        for (let i = 0; i < deleteIcon.length; i++) {
+            deleteIcon[i].addEventListener("click", function () {
+                let parentOfDelete = this.parentElement;
+                parentOfDelete.style.display = "none";
+            })
+        }   
+
     }
+
+    let form = document.querySelector("form");
+    // console.log(form);
+    form.addEventListener("submit", addNewElement);
+
 }
-
-// Add a trash on each new <li>
-let liElements = document.querySelector("li");
-
-
-

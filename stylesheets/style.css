@@ -10,24 +10,32 @@
     --color_orange: #f19066;
     --color_lightgrey: #dfe6e9;
     --color_darkgrey: #222325;
-
 }
 
 body {
     background-color: var(--color_darkgrey);
     font-family: 'Urbanist','Archivo Black', sans-serif;
+    font-size: 17px;
     color: white;
+    height: 90vh;
 }
 
 header, main {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
+}
+
+main {
+    width: 40%;
+    margin: 0 auto;
+    min-height: 90%;
+    text-align: center;
 }
 
 h1 {
     color: var(--color_green);
     font-family: 'Archivo Black', sans-serif;
-    width: auto;
+    /* width: auto; */
     text-decoration: underline var(--color_purple) 5px;
     text-align: center;
     text-transform: uppercase;
@@ -36,6 +44,68 @@ h1 {
     letter-spacing: 5px;
 }
 
+/* FORM */
+form {
+    margin-bottom: 20px;
+}
+
+input {
+    font-size: 17px;
+}
+
 ul {
     list-style: none;
+}
+
+li {
+    margin: 15px 0;
+    padding: 5px;
+    border: 1px dotted var(--color_green);
+    text-align: left;
+}
+
+#alert {
+    display: none;
+    color: var(--color_red);
+    font-size: 20px;
+}
+
+.delete-icon, .boxToCheck {
+    margin: 0 10px;
+}
+
+
+/* FOOTER */
+footer {
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: var(--color_lightgrey);
+    font-family: 'Urbanist','Archivo Black', sans-serif;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 320px) {
+    body {
+        font-size: 10px;
+        height: 80vh;
+    }
+    main {
+        width: 90%;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    form {
+        text-align: center;
+    }
+    #btn, li, input {
+        font-size: 15px;
+    }
 }

@@ -5,26 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My ToDoList App</title>
+    <title>My ToDoList App - by Marilène Khieu</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="https://kit.fontawesome.com/a41e9403cf.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <header><h1>My ToDoList</h1></header>
+    <header>
+        <h1>My ToDoList</h1>
+    </header>
 
     <main>
+        <h2>Add a new ToDo to your list!</h2>
+
         <form action="" method="">
-            <label for="toDo">Add a new ToDo</label><br>
             <input type="text" id="toDo" value="" placeholder="" maxlength=100 selected>
-            <!-- <input type="submit" value="Add" onclick="newElement()"> -->
-            <button type="button" onclick="newElement()">Add</button>
+            <input type="submit" value="Add" id="btn">
         </form>
+
+        <p id="alert">Oh ho! It seems like you didn't write any ToDo... Try again!</p>
 
         <ul>
         </ul>
     </main>
+
+    <footer>
+        <a href="https://marilenekhieu.herokuapp.com">©Marilène Khieu - 2021</a>
+    </footer>
+
     <script type="text/javascript" src="javascripts/script.js"></script>
 </body>
 
