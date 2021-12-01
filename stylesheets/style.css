@@ -17,7 +17,9 @@ body {
     font-family: 'Urbanist','Archivo Black', sans-serif;
     font-size: 17px;
     color: white;
+    width: 100vw;
     height: 90vh;
+    position: relative;
 }
 
 header, main {
@@ -45,7 +47,7 @@ h1 {
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 
@@ -65,6 +67,7 @@ input {
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 li {
@@ -89,6 +92,11 @@ li {
 footer {
     text-align: center;
     font-size: 13px;
+    min-height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 a {
