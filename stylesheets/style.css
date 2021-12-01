@@ -128,4 +128,7 @@ a:hover {
     #btn, li, input {
         font-size: 15px;
     }
+    footer {
+        position: static;
+    }
 }
