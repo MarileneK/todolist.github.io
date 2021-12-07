@@ -33,76 +33,23 @@ window.onload = function () {
         }
 
 
-        // IF USER CLICKS ON BOX ICON, TEXT IS CROSSED + ICON IS CHECKED
+        // IF USER CLICKS ON BOX ICON, TEXT IS COLORED & CROSSED + ICON IS CHECKED
         let checkedBox = document.querySelectorAll(".boxToCheck");
-        console.log("log de checkedBox =>", checkedBox);
-        // console.log("checkedBox.lastChildClasses", checkedBox[0].lastChild);
-        // console.log("checkedBox.lastElementChild", checkedBox[0].lastElementChild);
 
         for (let y = 0; y < checkedBox.length; y++) {
 
             checkedBox[y].addEventListener("click", function () {
 
                 let parentOfCheckedBox = this.parentElement;
-                // console.log("log de parentOfCheckedBox =>", parentOfCheckedBox);
-                
-
-                // console.log("checkedBox[y] =>", checkedBox[y]);
-                // console.log("lastChildOfCheckedBox =>", this.lastChild);
-                let lastChildOfCheckedBox = this.lastChild;
-                let lastElementChildOfCheckedBox = this.lastElementChild;
-                // console.log("lastElementChildOfCheckedBox", lastElementChildOfCheckedBox);
-                
-                // console.log("Au 1er clic classList =>", lastChildOfCheckedBox.classList);
-                let lastChildClasses = lastChildOfCheckedBox.classList;
-                let checkedIcon = ["far", "fa-check-square"];
-                let squareIcon = ["far", "fa-square"];
-                
-                // console.log(bonIconList);
 
                 if (parentOfCheckedBox.classList.contains("checkedText")) {
-
-                    // parentOfCheckedBox.classList.replace("checkedText", "normalText");
                     parentOfCheckedBox.classList.remove("checkedText");
-                    // console.log("lastElementChildOfCheckedBox[1]", lastElementChildOfCheckedBox[1].classList);
-                    // console.log("boxIcon", boxIcon.classList[1]);
-                    // boxIcon.classList[1].replace("fa-check-square", "fa-square");
-                    // boxIcon.classList[1].remove("fa-check-square");
-                    // boxIcon.classList[1].add("fa-square");
-                    // console.log("boxIcon", boxIcon.classList[1]);
-                    // lastElementChildOfCheckedBox.className = "far fa-square";
-                    // lastElementChildOfCheckedBox[1].classList.replace = "far fa-square";
-                    // boxIcon.className = "far fa-square";
-                    // lastChildClasses.replace(checkedIcon, squareIcon);
-                    // lastChildClasses.replace(["far", "fa-check-square"], ["far", "fa-square"]);
-
-                    // lastElementChildOfCheckedBox.classList.replace(checkedIcon, squareIcon);
-
-
-                    // boxIcon.classList.remove(checkedIcon);
-                    // boxIcon.classList.add(squareIcon);
-                    // boxIcon.classList.remove("fa-check-square");
-                    // boxIcon.classList.replace("fa-check-square", "fa-square");
-                    // boxIcon.classList[1] = "fa-square";
-                    // boxIcon.classList.remove("fa-check-square");
-
                     boxIcon.classList.remove("fa-check-square");
                     boxIcon.classList.add("fa-square");
-
-
-                    // boxIcon.classList.replace("far fa-check-square", "far fa-square");
-                    // boxIcon.classList.add("far");
-                    // console.log("log de parentOfCheckedBox dans if condition", parentOfCheckedBox);
-                    console.log("Au 2e click class =>", lastChildClasses);
                 } else {
                     parentOfCheckedBox.className = "checkedText";
                     boxIcon.className = "far fa-check-square";
                 }
-
-                
-                // console.log("boxIcon.className =>", boxIcon.className);
-                // console.log("log de parentOfCheckedBox =>", parentOfCheckedBox);
-
             })
         }
 
