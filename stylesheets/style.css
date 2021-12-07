@@ -87,6 +87,16 @@ li {
     margin: 0 10px;
 }
 
+.checkedText {
+    text-decoration: line-through;
+    color: #5f27cd;
+}
+
+.normalText {
+    text-decoration: none;
+    color: white;
+}
+
 
 /* FOOTER */
 footer {
