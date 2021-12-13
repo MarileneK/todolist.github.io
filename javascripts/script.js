@@ -44,8 +44,8 @@ window.onload = function () {
 
                 if (parentOfCheckedBox.classList.contains("checkedText")) {
                     parentOfCheckedBox.classList.remove("checkedText");
-                    boxIcon.classList.remove("fa-check-square");
-                    boxIcon.classList.add("fa-square");
+                    // boxIcon.classList.remove("fa-check-square");
+                    // boxIcon.classList.add("fa-square");
                 } else {
                     parentOfCheckedBox.className = "checkedText";
                     boxIcon.className = "far fa-check-square";
