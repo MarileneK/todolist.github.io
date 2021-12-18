@@ -15,6 +15,7 @@ window.onload = function () {
         let boxIcon = document.createElement("i");
         let newToDo = document.createTextNode(userInput);
 
+        // CHECKBOX ICON
         box.className = "boxToCheck";
         boxIcon.className = "far fa-square";
 
@@ -23,7 +24,7 @@ window.onload = function () {
         li.appendChild(newToDo);
 
 
-        // IF USER CLICKS ON ADD BTN
+        // WHEN USER CLICKS ON ADD BTN: EITHER SHOWS A WARNING OR CREATE A NEW TODO
         if (userInput === "") {
             alertWarning.style.display = "inline";
         } else {
@@ -40,15 +41,20 @@ window.onload = function () {
 
             checkedBox[y].addEventListener("click", function () {
 
-                let parentOfCheckedBox = this.parentElement;
+                // console.log("checkedBox[y]", checkedBox[y]);
+                // console.log("checkedBox[y].firstElementChild", checkedBox[y].firstElementChild);
+                let childrenOfCheckedBox = checkedBox[y].firstElementChild;
 
+                // console.log("parentOfCheckedBox ->", parentOfCheckedBox);
+                let parentOfCheckedBox = this.parentElement;
+                
                 // if (parentOfCheckedBox.classList.contains("checkedText")) {
                 //     parentOfCheckedBox.classList.remove("checkedText");
                 //     boxIcon.classList.remove("fa-check-square");
                 //     boxIcon.classList.add("fa-square");
                 // } else {
                     parentOfCheckedBox.className = "checkedText";
-                    // boxIcon.className = "far fa-check-square";
+                    childrenOfCheckedBox.className = "far fa-check-square";
                 // }
             })
         }
@@ -70,6 +76,7 @@ window.onload = function () {
         for (let i = 0; i < deleteIcon.length; i++) {
             deleteIcon[i].addEventListener("click", function () {
                 let parentOfDelete = this.parentElement;
+                console.log("parentOfDelete ->", parentOfDelete);
                 parentOfDelete.style.display = "none";
             })
         }
