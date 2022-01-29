@@ -1,9 +1,11 @@
+
+
 window.onload = function () {
 
     function addNewElement(event) {
         event.preventDefault(); // Prevents from page refresh
 
-        // 1. TARGET FORM TAGS
+        // 1. TARGET HTML TAGS
         let ul = document.querySelector("ul");
         let userInput = document.querySelector("#toDo").value;
         let alertWarning = document.querySelector("#alert");
@@ -15,7 +17,6 @@ window.onload = function () {
         let boxIcon = document.createElement("i");
         let newToDo = document.createTextNode(userInput);
 
-        // CHECKBOX ICON
         box.className = "boxToCheck";
         boxIcon.className = "far fa-square";
 
@@ -24,17 +25,17 @@ window.onload = function () {
         li.appendChild(newToDo);
 
 
-        // WHEN USER CLICKS ON ADD BTN: EITHER SHOWS A WARNING OR CREATE A NEW TODO
+        // 3. WHEN USER CLICKS ON ADD BTN: EITHER SHOWS A WARNING OR CREATE A NEW TODO
         if (userInput === "") {
             alertWarning.style.display = "inline";
         } else {
             alertWarning.style.display = "none";
+            // localStorage.setItem("value", userInput);
             ul.appendChild(li);
             document.querySelector("#toDo").value = "";
         }
 
-
-        // IF USER CLICKS ON BOX ICON, TEXT IS COLORED & CROSSED + ICON IS CHECKED
+        // 4. IF USER CLICKS ON BOX ICON, TEXT IS COLORED & CROSSED + ICON IS CHECKED
         let checkedBox = document.querySelectorAll(".boxToCheck");
 
         for (let y = 0; y < checkedBox.length; y++) {
@@ -60,7 +61,7 @@ window.onload = function () {
         }
 
 
-        // 3. ADD TRASH ICON
+        // 5.1. ADD TRASH ICON
         let aTag = document.createElement("a");
         let icon = document.createElement("i");
 
@@ -70,7 +71,8 @@ window.onload = function () {
         aTag.appendChild(icon);
         li.appendChild(aTag);
 
-        // DELETE AFTER CLICKING ON TRASH ICON
+
+        // 5.2. DELETE AFTER CLICKING ON TRASH ICON
         let deleteIcon = document.querySelectorAll(".delete-icon");
 
         for (let i = 0; i < deleteIcon.length; i++) {
